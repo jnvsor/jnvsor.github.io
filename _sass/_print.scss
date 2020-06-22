@@ -1,0 +1,42 @@
+@media print {
+  * {
+    background: transparent !important;
+    color: $text-color !important;
+    overflow: visible !important;
+    position: relative !important;
+    font-size: 9pt;
+  }
+
+  .noprint {
+    display: none;
+  }
+
+  a.noprint {
+    display: inline;
+  }
+
+  a[href]:after {
+    content: ": [" attr(href) "]";
+  }
+
+  a[href^="#"],
+  a[href^="mailto:"],
+  a.noprint {
+    &:after {
+      display: none;
+    }
+  }
+
+  .site-header,
+  .site-footer {
+    display: none;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+
+  #cv h2 {
+    margin-bottom: 0;
+  }
+}
