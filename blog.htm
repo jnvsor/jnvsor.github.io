@@ -1,0 +1,18 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+menu:
+  show: false # We do this manually depending on whether there are site.posts or not
+---
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li class="post">
+      <h2><a class="post-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a></h2>
+      <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}" class="by-line">{% if post.displaydate %}{{ post.displaydate | date_to_string }}{% else %}{{ post.date | date_to_string }}{% endif %}</time>
+    </li>
+  {% endfor %}
+</ul>
+
+<p class="rss-subscribe"><a href="{{ site.baseurl }}/feed.xml">RSS</a></p>

@@ -1,0 +1,21 @@
+---
+layout: default
+permalink: /
+menu:
+  show: false
+---
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ site.posts.first.title }}</h1>
+    <p class="post-meta">{% if site.posts.first.displaydate %}{{ site.posts.first.displaydate | date: "%b %-d, %Y" }}{% else %}{{ site.posts.first.date | date: "%b %-d, %Y" }}{% endif %}{% if site.posts.first.author %} • {{ site.posts.first.author }}{% endif %}{% if site.posts.first.meta %} • {{ site.posts.first.meta }}{% endif %}</p>
+  </header>
+
+  <article class="post-content">
+    {{ site.posts.first.content }}
+  </article>
+
+  <a href="{{ site.base_url }}/blog/">Read more</a>
+
+</div>

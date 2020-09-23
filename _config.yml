@@ -1,0 +1,30 @@
+title: Jonathan Vollebregt's stuff
+email: jnvsor@gmail.com
+url: "http://jnvsor.github.io"
+description:
+  I'm a programmer. I program stuff.
+github_username: jnvsor
+author: &author "Jonathan Vollebregt"
+
+permalink: /blog/:categories/:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+exclude:
+  - .gitignore
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: false
+      layout: post
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all

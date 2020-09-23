@@ -1,0 +1,21 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title | escape }}</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="https://github.com/{{ site.github_username }}">Github</a>
+      {% if site.posts.size > 0 %}
+        <a class="page-link" href="{{ site.baseurl | append: "/blog/" }}">Blog</a>
+      {% endif %}
+      {% for page in site.pages %}
+        {% if page.title or page.menu.title %}{% unless page.menu.show == false %}
+        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{% if page.menu.title %}{{ page.menu.title | escape }}{% else %}{{ page.title | escape }}{% endif %}</a>
+        {% endunless %}{% endif %}
+      {% endfor %}
+    </nav>
+
+  </div>
+
+</header>
